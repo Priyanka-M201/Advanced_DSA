@@ -6,16 +6,19 @@ public class Longest_consecutive_sequence {
         for(int i=0;i<arr.length;i++){
             set.add(arr[i]);
         }
-        int i=1;
+        int i=0;
         int length=0;
         while(i<arr.length){
-            if(set.contains(i)){
-                length++;
-                i++;
+            if(!set.contains(arr[i]-1)){
+                int current=arr[i];
+                int len=1;
+                while(set.contains(current+ 1)){
+                    current++;
+                    len++;
+                }
+                length=Math.max(length, len);
             }
-            else{
-                break;
-            }
+            i++;
         }
         System.out.println(length);
     }
