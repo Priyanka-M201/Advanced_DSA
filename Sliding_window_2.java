@@ -5,7 +5,6 @@ public class Sliding_window_2 {
         int right=0;
         int left=0;
         int sum=0;
-        //int len=0;
         int max=0;
         while(right<arr.length){
             sum+=arr[right];
